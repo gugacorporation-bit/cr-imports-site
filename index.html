@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#060708">
+<meta property="og:title" content="CR Imports | Celulares & Acessórios">
+<meta property="og:description" content="iPhones seminovos, Xiaomi lacrados e acessórios. Seu usado vale como entrada. Parcele em até 18x.">
+<meta property="og:image" content="img/logo.png">
+<link rel="icon" href="img/logo.png">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>CR Imports | Celulares &amp; Acessórios</title>
+<meta name="description" content="Catálogo de iPhones seminovos e simulador de troca da CR Imports.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Onest:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: loja escura de vitrine. Topo fixo com logo + 2 abas; vitrine em grade; Troca Fácil em assistente passo a passo. Visual único escuro, cores da logo. */
+:root{
+  --bg:#060708; --surface:#0f1114; --surface-2:#161a1f; --line:#232831;
+  --fg:#f3f5f9; --muted:#8e97a6; --blue:#6599ff; --blue-deep:#2f5fd6; --blue-ink:#0b1630;
+  --ok:#5fd39a; --warn:#f2c14e;
+  --f-display:"Unbounded","Arial Black",system-ui,sans-serif;
+  --f-body:"Onest",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  --r:18px;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:8px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+.wrap{max-width:1120px;margin:0 auto;padding-inline:16px}
+
+/* Topo */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:16px;height:68px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex:none}
+.brand img{height:40px;width:auto;display:block}
+.tabs{display:flex;gap:4px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:4px;margin-left:auto}
+.tab{border:0;background:transparent;padding:8px 16px;border-radius:999px;font-weight:600;font-size:14px;cursor:pointer;color:var(--muted);white-space:nowrap}
+.tab[aria-selected="true"]{background:var(--fg);color:var(--bg)}
+.tab .ico{display:inline-block;margin-right:6px;vertical-align:-2px}
+.top-wa{flex:none;display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:600;font-size:14px;padding:9px 14px;border-radius:999px;background:var(--blue);color:var(--blue-ink)}
+@media (max-width:640px){.top-wa span{display:none}.top-wa{padding:9px}.brand img{height:34px}.tab{padding:8px 12px;font-size:13px}.tab .ico{display:none}}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero::before{content:"";position:absolute;inset:-40% -10% auto auto;width:62%;height:180%;background:linear-gradient(135deg,transparent 0 44%,var(--blue) 44% 56%,transparent 56%);opacity:.14;transform:skewX(-8deg);pointer-events:none}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.25fr .75fr;gap:32px;align-items:end;padding-block:56px 40px}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
+h1{font-family:var(--f-display);font-weight:700;font-size:clamp(30px,5.4vw,58px);line-height:1.04;letter-spacing:-.02em;margin:14px 0 16px;text-wrap:balance}
+h1 em{font-style:normal;color:var(--blue)}
+.lead{color:var(--muted);font-size:18px;max-width:46ch;margin:0}
+.perks{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.perks li{display:flex;gap:12px;align-items:center;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:14px;font-weight:600}
+.perks small{display:block;font-weight:400;color:var(--muted);font-size:13px}
+.perks svg{flex:none;color:var(--blue)}
+@media (max-width:820px){.hero .wrap{grid-template-columns:1fr;padding-block:36px 28px}}
+
+/* Vitrine */
+.bar{display:flex;flex-wrap:wrap;align-items:center;gap:12px;justify-content:space-between;padding-block:28px 18px}
+h2{font-family:var(--f-display);font-weight:500;font-size:clamp(20px,2.6vw,26px);letter-spacing:-.01em;margin:0;text-wrap:balance}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);background:var(--surface);padding:8px 14px;border-radius:999px;font-size:14px;font-weight:600;color:var(--muted);cursor:pointer}
+.chip[aria-pressed="true"]{border-color:var(--blue);color:var(--fg);background:color-mix(in srgb,var(--blue) 16%,var(--surface))}
+.chip .n{font-family:var(--f-mono);font-size:12px;margin-left:6px;opacity:.8}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px;padding-bottom:16px}
+.card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:border-color .2s,transform .2s}
+.card:hover{border-color:color-mix(in srgb,var(--blue) 55%,var(--line));transform:translateY(-2px)}
+.shot{position:relative;aspect-ratio:4/5;overflow:hidden;max-width:100%;background:radial-gradient(120% 90% at 50% 20%,var(--surface-2),var(--bg));display:grid;place-items:center;border-bottom:1px solid var(--line)}
+.shot svg{height:80%;width:auto;max-width:70%;filter:drop-shadow(0 18px 28px rgba(0,0,0,.55))}
+.shot.photo{display:block;background:var(--surface-2)}
+.gal{display:flex;height:100%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain}
+.gal::-webkit-scrollbar{display:none}
+.gal img{flex:0 0 100%;width:100%;height:100%;object-fit:cover;scroll-snap-align:start;display:block}
+.dots{position:absolute;left:0;right:0;bottom:12px;display:flex;justify-content:center;gap:6px;pointer-events:none}
+.dots i{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.45);transition:width .2s,background .2s}
+.dots i.on{width:18px;border-radius:3px;background:#fff}
+.arr{position:absolute;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;border:0;background:rgba(6,7,8,.6);color:#fff;font-size:18px;line-height:1;cursor:pointer;display:grid;place-items:center;opacity:0;transition:opacity .2s}
+.arr.prev{left:10px}.arr.next{right:10px}
+.shot.photo:hover .arr,.arr:focus-visible{opacity:1}
+@media (hover:none){.arr{display:none}}
+.tag{position:absolute;z-index:2;top:12px;left:12px;font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:5px 9px;border-radius:999px;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(6px);border:1px solid var(--line);color:var(--muted)}
+.tag.ok{color:var(--ok);border-color:color-mix(in srgb,var(--ok) 45%,var(--line))}
+.ghead{grid-column:1/-1;display:flex;align-items:baseline;gap:10px;margin:14px 0 -4px;font-family:var(--f-display);font-weight:500;font-size:16px}
+.ghead:first-child{margin-top:0}
+.ghead span{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.tag.box{left:auto;right:12px;color:var(--fg);border-color:color-mix(in srgb,var(--blue) 50%,var(--line))}
+.body{display:flex;flex-direction:column;gap:12px;padding:16px;flex:1}
+.name{font-family:var(--f-display);font-weight:500;font-size:18px;line-height:1.2;margin:0}
+.specs{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none}
+.specs li{font-size:13px;padding:4px 9px;border-radius:8px;background:var(--surface-2);color:var(--fg)}
+.specs li.dim{color:var(--muted)}
+.batt{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:10px;font-size:13px;color:var(--muted)}
+.meter{display:grid;grid-template-columns:repeat(10,1fr);gap:3px}
+.meter i{height:8px;border-radius:2px;background:var(--line)}
+.meter i.on{background:var(--blue)}
+.batt b{font-family:var(--f-mono);font-weight:500;color:var(--fg);font-variant-numeric:tabular-nums}
+.inc{font-size:13px;color:var(--muted);margin:0}
+.price{display:flex;align-items:baseline;justify-content:space-between;gap:8px;padding-top:12px;border-top:1px dashed var(--line);margin-top:auto}
+.price span{font-size:13px;color:var(--muted)}
+.price b{font-size:15px}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:12px;padding:11px 12px;font-weight:600;font-size:14px;text-decoration:none;cursor:pointer;border:1px solid transparent;text-align:center;line-height:1.2}
+.btn.pri{background:var(--blue);color:var(--blue-ink)}
+.btn.pri:hover{background:#7eabff}
+.btn.sec{background:transparent;border-color:var(--line);color:var(--fg)}
+.btn.sec:hover{border-color:var(--blue)}
+.btn.big{padding:15px 20px;font-size:16px;border-radius:14px}
+.btn[disabled]{opacity:.4;cursor:not-allowed}
+
+.empty{grid-column:1/-1;border:1px dashed var(--line);border-radius:var(--r);padding:40px 20px;text-align:center;color:var(--muted)}
+.empty strong{display:block;color:var(--fg);font-family:var(--f-display);font-weight:500;font-size:18px;margin-bottom:6px}
+.note-ref{font-size:12px;color:var(--muted);padding-bottom:8px}
+
+/* Faixa troca */
+.upsell{margin-block:28px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;padding:24px;border-radius:var(--r);background:linear-gradient(120deg,var(--blue-deep),#1b2f66 60%,var(--surface));border:1px solid color-mix(in srgb,var(--blue) 40%,var(--line))}
+.upsell h3{font-family:var(--f-display);font-weight:700;font-size:clamp(18px,2.4vw,24px);margin:0 0 4px;text-wrap:balance}
+.upsell p{margin:0;color:#c9d6f5}
+.upsell .btn{background:var(--fg);color:var(--bg)}
+@media (max-width:640px){.upsell{grid-template-columns:1fr}}
+
+/* FAQ */
+.faq{padding-block:20px 40px;display:grid;grid-template-columns:.8fr 1.2fr;gap:24px}
+.faq details{border-bottom:1px solid var(--line);padding-block:14px}
+.faq summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:12px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--blue);font-family:var(--f-mono)}
+.faq details[open] summary::after{content:"–"}
+.faq details p{color:var(--muted);margin:8px 0 0;max-width:62ch}
+@media (max-width:820px){.faq{grid-template-columns:1fr}}
+
+/* Troca Fácil */
+.troca .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:28px;padding-block:40px}
+@media (max-width:900px){.troca .wrap{grid-template-columns:1fr;padding-block:28px}}
+.how{display:grid;gap:14px;align-content:start}
+.how ol{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:10px}
+.how li{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;padding:14px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+.how li b{display:block}
+.how li span{color:var(--muted);font-size:14px}
+.how .num{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;font-family:var(--f-mono);background:var(--blue-ink);color:var(--blue);border:1px solid color-mix(in srgb,var(--blue) 35%,var(--line))}
+.wiz{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:22px;min-width:0}
+.prog{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.prog .track{flex:1;height:6px;border-radius:999px;background:var(--line);overflow:hidden}
+.prog .fill{height:100%;background:var(--blue);border-radius:999px;transition:width .3s}
+.prog span{font-family:var(--f-mono);font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.step h3{font-family:var(--f-display);font-weight:500;font-size:20px;margin:0 0 4px;text-wrap:balance}
+.step .hint{color:var(--muted);margin:0 0 18px;font-size:14px}
+.opts{display:grid;gap:8px}
+.opts.cols{grid-template-columns:repeat(auto-fill,minmax(120px,1fr))}
+.opt{position:relative;display:flex;flex-direction:column;gap:2px;text-align:left;padding:13px 14px;border:1px solid var(--line);border-radius:12px;background:var(--surface-2);cursor:pointer}
+.opt b{font-weight:600}
+.opt small{color:var(--muted);font-size:13px}
+.opt[aria-pressed="true"]{border-color:var(--blue);background:color-mix(in srgb,var(--blue) 14%,var(--surface-2))}
+.opt[aria-pressed="true"]::after{content:"";position:absolute;top:12px;right:12px;width:10px;height:10px;border-radius:50%;background:var(--blue)}
+.group-label{font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:14px 0 6px}
+.group-label:first-child{margin-top:0}
+.slider{display:grid;gap:12px}
+.slider output{font-family:var(--f-display);font-size:44px;font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
+.slider output small{font-size:20px;color:var(--muted)}
+input[type=range]{width:100%;accent-color:var(--blue)}
+.scale{display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.toggles{display:grid;gap:10px}
+.tg{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:13px 14px;border:1px solid var(--line);border-radius:12px;background:var(--surface-2)}
+.tg div small{display:block;color:var(--muted);font-size:13px}
+.seg{display:flex;flex:none;background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:3px}
+.seg button{border:0;background:transparent;padding:6px 12px;border-radius:999px;font-size:13px;font-weight:600;color:var(--muted);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--fg);color:var(--bg)}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:22px}
+.nav .btn{min-width:120px}
+.field{display:grid;gap:6px;margin-top:16px}
+.field label{font-size:13px;color:var(--muted)}
+.field input{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font:inherit;color:var(--fg)}
+.field input:focus{outline:none;border-color:var(--blue)}
+
+.result{display:grid;gap:16px}
+.est{padding:20px;border-radius:16px;background:linear-gradient(140deg,var(--blue-ink),var(--surface-2));border:1px solid color-mix(in srgb,var(--blue) 40%,var(--line))}
+.est .lbl{font-family:var(--f-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--blue)}
+.est .val{font-family:var(--f-display);font-weight:700;font-size:clamp(26px,5vw,40px);line-height:1.1;margin:6px 0 4px;font-variant-numeric:tabular-nums}
+.est p{margin:0;color:var(--muted);font-size:13px}
+.summary{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;margin:0;font-size:14px}
+.summary dt{color:var(--muted)}
+.summary dd{margin:0;font-weight:600}
+.alert{padding:12px 14px;border-radius:12px;border:1px solid color-mix(in srgb,var(--warn) 45%,var(--line));color:var(--fg);font-size:14px;background:color-mix(in srgb,var(--warn) 8%,var(--surface))}
+
+/* Rodapé */
+footer{border-top:1px solid var(--line);margin-top:24px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center;padding-block:28px;color:var(--muted);font-size:14px}
+footer img{height:34px;width:auto;display:block}
+.contact{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center}
+.contact code{font-family:var(--f-mono);color:var(--fg);user-select:all}
+.copy{border:1px solid var(--line);background:transparent;border-radius:8px;padding:4px 10px;font-size:12px;cursor:pointer;color:var(--muted)}
+
+.view[hidden]{display:none!important}
+.fade{animation:fade .35s ease both}
+@keyframes fade{from{opacity:.4;transform:translateY(6px)}to{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#catalogo" aria-label="CR Imports, início"><img src="img/logo.png" alt="CR Imports"></a>
+    <nav class="tabs" role="tablist" aria-label="Seções">
+      <button class="tab" role="tab" id="tab-catalogo" aria-controls="catalogo" aria-selected="true" data-view="catalogo"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg>Catálogo</button>
+      <button class="tab" role="tab" id="tab-troca" aria-controls="troca" aria-selected="false" data-view="troca"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8h13l-3-3M20 16H7l3 3"/></svg>Troca Fácil</button>
+    </nav>
+    <a class="top-wa" href="https://wa.me/5591985327797" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.2.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+      <span>WhatsApp</span>
+    </a>
+  </div>
+</header>
+
+<main>
+<!-- CATÁLOGO -->
+<section class="view" id="catalogo" role="tabpanel" aria-labelledby="tab-catalogo">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow">Celulares &amp; acessórios · Pará</div>
+        <h1>Seu próximo celular <em>está aqui.</em> Seu usado entra na conta.</h1>
+        <p class="lead">iPhones seminovos com a saúde da bateria informada e Xiaomi lacrados. Escolha, simule a troca e feche pelo WhatsApp.</p>
+      </div>
+      <ul class="perks">
+        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8h13l-3-3M20 16H7l3 3"/></svg><div>Seu usado vale como entrada<small>Simule o valor na aba Troca Fácil</small></div></li>
+        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg><div>Parcele em até 18x<small>No cartão de crédito</small></div></li>
+        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg><div>Novos e seminovos<small>iPhone, Xiaomi e Samsung</small></div></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="bar">
+      <h2 id="cat-title">iPhone seminovos</h2>
+      <div class="chips" id="chips" role="group" aria-label="Filtrar categoria"></div>
+    </div>
+    <div class="grid" id="grid"></div>
+    <p class="note-ref" id="note-ref">Fotos reais dos aparelhos à venda. Deslize a foto para ver mais ângulos.</p>
+
+    <div class="upsell">
+      <div>
+        <h3>Quanto vale o seu celular?</h3>
+        <p>iPhone ou Xiaomi: responda algumas perguntas rápidas e veja uma estimativa do seu usado como entrada.</p>
+      </div>
+      <button class="btn big" data-go="troca">Simular minha troca</button>
+    </div>
+
+    <div class="faq">
+      <div>
+        <div class="eyebrow">Dúvidas</div>
+        <h2 style="margin-top:10px">Perguntas frequentes</h2>
+      </div>
+      <div>
+        <details><summary>O que significa “saúde da bateria”?</summary><p>É a capacidade atual da bateria comparada a quando o aparelho era novo. Você encontra esse número em Ajustes › Bateria › Saúde da Bateria. Em todo anúncio informamos esse valor.</p></details>
+        <details><summary>Como funciona a troca do meu usado?</summary><p>Você simula na aba Troca Fácil e envia os dados pelo WhatsApp. Nossa equipe confirma o valor depois de avaliar o aparelho, e ele entra como parte do pagamento.</p></details>
+        <details><summary>Quais as formas de pagamento?</summary><p>Pix, dinheiro e cartão de crédito em até 18x. Seu usado também pode entrar como entrada.</p></details>
+        <details><summary>Como faço para comprar?</summary><p>Toque em “Tenho interesse” no aparelho que você quer. A conversa abre no WhatsApp já com o modelo escolhido.</p></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TROCA FÁCIL -->
+<section class="view troca" id="troca" role="tabpanel" aria-labelledby="tab-troca" hidden>
+  <div class="wrap">
+    <div class="how">
+      <div class="eyebrow">Troca Fácil</div>
+      <h1 style="font-size:clamp(28px,4.4vw,44px);margin:0">Seu usado vira entrada.</h1>
+      <p class="lead" style="font-size:16px">Conte como está o seu aparelho e veja na hora uma estimativa. A proposta final chega pelo WhatsApp.</p>
+      <ol>
+        <li><span class="num">1</span><div><b>Descreva seu aparelho</b><span>Modelo, memória, bateria e estado.</span></div></li>
+        <li><span class="num">2</span><div><b>Veja a estimativa</b><span>Uma faixa de valor calculada na hora.</span></div></li>
+        <li><span class="num">3</span><div><b>Feche pelo WhatsApp</b><span>Avaliamos o aparelho e confirmamos o valor.</span></div></li>
+      </ol>
+    </div>
+    <div class="wiz" id="wiz" aria-live="polite"></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="img/logo.png" alt="CR Imports">
+    <div class="contact">
+      <span>WhatsApp <code id="phone">(91) 98532-7797</code> <button class="copy" id="copy" type="button">Copiar</button></span>
+      <a href="https://www.instagram.com/c4ssio_imports/" target="_blank" rel="noopener">Instagram @c4ssio_imports</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const WA = "5591985327797";
+const waLink = t => "https://wa.me/" + WA + "?text=" + encodeURIComponent(t);
+
+const PHOTOS = {"16pm": ["img/16pm-1.jpg", "img/16pm-2.jpg", "img/16pm-3.jpg", "img/16pm-4.jpg", "img/16pm-5.jpg", "img/16pm-6.jpg"], "12pm": ["img/12pm-1.jpg", "img/12pm-2.jpg", "img/12pm-3.jpg", "img/12pm-4.jpg", "img/12pm-5.jpg"], "13": ["img/13-1.jpg", "img/13-2.jpg", "img/13-3.jpg", "img/13-4.jpg"], "14p": ["img/14p-1.jpg", "img/14p-2.jpg", "img/14p-3.jpg", "img/14p-4.jpg", "img/14p-5.jpg"], "a-wultra2": ["img/a-wultra2-1.jpg"], "a-wultra": ["img/a-wultra-1.jpg", "img/a-wultra-2.jpg"], "a-n11": ["img/a-n11-1.jpg", "img/a-n11-2.jpg"], "a-hwmini2": ["img/a-hwmini2-1.jpg", "img/a-hwmini2-2.jpg"], "a-p9": ["img/a-p9-1.jpg"], "a-airdots": ["img/a-airdots-1.jpg", "img/a-airdots-2.jpg"], "a-havit": ["img/a-havit-1.jpg"], "a-fones": ["img/a-fones-1.jpg"], "a-c35": ["img/a-c35-1.jpg"], "a-c20": ["img/a-c20-1.jpg"], "a-lelong30": ["img/a-lelong30-1.jpg"], "a-hm30kit": ["img/a-hm30kit-1.jpg"], "a-hm30": ["img/a-hm30-1.jpg", "img/a-hm30-2.jpg"], "a-peining20": ["img/a-peining20-1.jpg"], "a-cabo2m": ["img/a-cabo2m-1.jpg", "img/a-cabo2m-2.jpg"], "a-cabo1m": ["img/a-cabo1m-1.jpg"], "a-mouse": ["img/a-mouse-1.jpg", "img/a-mouse-2.jpg"], "a-mic": ["img/a-mic-1.jpg"]};
+/* ---------- Estoque (listas do Gustavo, 06/10/2026) ---------- */
+const IPHONES = [
+  {id:"16pm", brand:"iphone", model:"iPhone 16 Pro Max", storage:"256 GB", color:"Natural Titânio", battery:91, box:true, art:{body:"#c2bbb0", frame:"#a7a093", cam:"pro", big:true}},
+  {id:"14p",  brand:"iphone", model:"iPhone 14 Pro", storage:"128 GB", color:"Roxo", battery:88, box:false, art:{body:"#5a4f66", frame:"#6b5f78", cam:"pro"}},
+  {id:"12pm", brand:"iphone", model:"iPhone 12 Pro Max", storage:"128 GB", color:"Gold", battery:88, box:true, art:{body:"#e6d4b4", frame:"#cfae7c", cam:"pro", big:true}},
+  {id:"13",   brand:"iphone", model:"iPhone 13", storage:null, color:"Verde", battery:84, box:true, art:{body:"#3b4f3b", frame:"#4a5f48", cam:"dual"}},
+  {id:"14pm", brand:"iphone", model:"iPhone 14 Pro Max", storage:"128 GB", color:null, battery:85, box:false, art:{body:"#3a3d44", frame:"#55595f", cam:"pro", big:true}},
+];
+const XIAOMI = [
+  {id:"rn14p", brand:"xiaomi", model:"Redmi Note 14 Pro 5G", storage:"256 GB", ram:"8 GB", sealed:true, art:{body:"#2b2f38", frame:"#3b404b", cam:"redmiPro", big:true}},
+  {id:"rn15",  brand:"xiaomi", model:"Redmi Note 15", storage:"256 GB", ram:"8 GB", sealed:true, art:{body:"#31415c", frame:"#41516c", cam:"redmi", big:true}},
+  {id:"r17",   brand:"xiaomi", model:"Redmi 17", storage:"256 GB", ram:"6 GB", sealed:true, art:{body:"#262a30", frame:"#353a42", cam:"redmi"}},
+  {id:"r15b",  brand:"xiaomi", model:"Redmi 15", storage:"256 GB", ram:"8 GB", sealed:true, art:{body:"#3a3f47", frame:"#4a5059", cam:"redmi"}},
+  {id:"r15a",  brand:"xiaomi", model:"Redmi 15", storage:"128 GB", ram:"6 GB", sealed:true, art:{body:"#1f2329", frame:"#2f343c", cam:"redmi"}},
+];
+const STOCK = [...IPHONES, ...XIAOMI];
+/* Acessórios: nomes tirados das caixas nas fotos do Gustavo (06/10/2026) */
+const ACESS = [
+  {id:"a-wultra2", group:"Smartwatches", model:"Smartwatch Microwear Watch Ultra 2", specs:["Pode nadar","Faz ligações"], note:"Acompanha pulseira e carregador magnético"},
+  {id:"a-wultra", group:"Smartwatches", model:"Smartwatch Microwear Watch Ultra 47 mm", specs:["47 mm","WhatsApp no relógio"], note:"Caixa redonda com pulseira laranja"},
+  {id:"a-n11", group:"Smartwatches", model:"Smartwatch N11 Ultra", specs:["Ligações por Bluetooth","Assistente de voz","Carregamento sem fio"], note:"Pulseira oceano preta"},
+  {id:"a-hwmini2", group:"Smartwatches", model:"Smartwatch HW Mini 2 com 7 pulseiras", specs:["Kit presente","7 pulseiras","Chat GPT"], note:"Acompanha carregador. Ótimo para presente"},
+  {id:"a-p9", group:"Fones e áudio", model:"Headphone Bluetooth P9", specs:["Sem fio","Preto ou prata"], note:"Estilo over-ear, confortável para usar o dia todo"},
+  {id:"a-airdots", group:"Fones e áudio", model:"Fone sem fio Redmi AirDots Pro", specs:["Bluetooth","Visor de bateria no estojo"], note:"Estojo carregador compacto"},
+  {id:"a-havit", group:"Fones e áudio", model:"Headset Gamer Havit GameNote H2230d", specs:["P2 3,5 mm","Alto-falante 50 mm","Microfone"], note:"Para PC, console e celular"},
+  {id:"a-fones", group:"Fones e áudio", model:"Fones de ouvido variados", specs:["JBL","Basike","Lehmox","Wearzone","Ebos"], note:"Vários modelos com e sem fio. Pergunte pelo seu"},
+  {id:"a-c35", group:"Carregadores e cabos", model:"Carregador 35W USB-C com cabo USB-C", specs:["35W","Para iPhone 15 em diante"], note:"Fonte + cabo USB-C para USB-C"},
+  {id:"a-c20", group:"Carregadores e cabos", model:"Carregador 20W USB-C com cabo Lightning", specs:["20W","Para iPhone com Lightning"], note:"Fonte + cabo USB-C para Lightning"},
+  {id:"a-lelong30", group:"Carregadores e cabos", model:"Carregador Turbo Lelong 30W PD", specs:["30W","Cabo iOS 1 m","Anatel"], note:"Modelo LE-297CP"},
+  {id:"a-hm30kit", group:"Carregadores e cabos", model:"Carregador H'Maston 30W USB-C com cabo iOS", specs:["30W","USB-C"], note:"Fonte + cabo para iPhone"},
+  {id:"a-hm30", group:"Carregadores e cabos", model:"Fonte H'Maston 30W USB-C", specs:["30W","USB-C"], note:"Só a fonte, use com seu cabo"},
+  {id:"a-peining20", group:"Carregadores e cabos", model:"Kit Carregador Turbo Peining 20W", specs:["20W","USB","Turbo Power 3.0","Anatel"], note:"Fonte + cabo para iPhone"},
+  {id:"a-cabo2m", group:"Carregadores e cabos", model:"Cabo H'Maston USB-C para Lightning 2 m", specs:["27W","2 metros","Trançado"], note:"Modelo SJX55-PD2M, ultrafino"},
+  {id:"a-cabo1m", group:"Carregadores e cabos", model:"Cabo USB-C para Lightning 1 m", specs:["27W","1 metro"], note:"Carregamento rápido para iPhone"},
+  {id:"a-mouse", group:"Gamer e outros", model:"Mouse Gamer Lehmox LEY-2312", specs:["Iluminação RGB","Design ergonômico"], note:"Mouse gamer competitivo"},
+  {id:"a-mic", group:"Gamer e outros", model:"Microfone de lapela sem fio Basike", specs:["Para iPhone (Lightning)","Clipe magnético"], note:"Modelo Ba-MIC0006, ótimo para gravar vídeos"},
+].map(a=>({...a, brand:"acess"}));
+const CATS = [
+  {id:"iphone", label:"iPhone", items:IPHONES, sub:"Seminovos"},
+  {id:"xiaomi", label:"Xiaomi", items:XIAOMI, sub:"Lacrados"},
+  {id:"acess", label:"Acessórios", items:ACESS, sub:"Pronta entrega"},
+];
+const fullName = p => [p.model, p.storage, p.color].filter(Boolean).join(" ");
+const detail = p => p.brand==="xiaomi" ? [p.storage, p.ram+" RAM", "lacrado"].join(" · ") : [p.storage, p.color, "bateria "+p.battery+"%"].filter(Boolean).join(" · ");
+
+/* Ilustração do verso do aparelho (substituída pelas fotos reais depois) */
+function phoneSVG(a){
+  const w=150,h=a.big?300:290, r=a.cam.startsWith("redmi")?24:30;
+  const lens=(cx,cy,s)=>`<circle cx="${cx}" cy="${cy}" r="${s}" fill="#0b0c0e" stroke="${a.frame}" stroke-width="2.5"/><circle cx="${cx}" cy="${cy}" r="${s*.55}" fill="#151a2b"/><circle cx="${cx-s*.25}" cy="${cy-s*.25}" r="${s*.18}" fill="#5d6b8f" opacity=".7"/>`;
+  const flash=(cx,cy,s)=>`<circle cx="${cx}" cy="${cy}" r="${s}" fill="#f4f0e6" opacity=".85"/>`;
+  const bumps = {
+    pro: `<rect x="12" y="12" width="76" height="80" rx="20" fill="${a.body}" stroke="rgba(255,255,255,.18)"/>`+lens(33,34,15)+lens(33,72,15)+lens(67,53,15)+flash(69,25,5)+`<circle cx="69" cy="82" r="5" fill="#0b0c0e"/>`,
+    dual: `<rect x="12" y="12" width="66" height="70" rx="18" fill="${a.body}" stroke="rgba(255,255,255,.18)"/>`+lens(30,30,13)+lens(60,64,13)+flash(62,27,4.5),
+    redmi: `<rect x="14" y="14" width="42" height="98" rx="21" fill="rgba(0,0,0,.28)" stroke="rgba(255,255,255,.14)"/>`+lens(35,36,14)+lens(35,74,10)+flash(35,100,4.5),
+    redmiPro: `<rect x="12" y="12" width="78" height="78" rx="22" fill="rgba(0,0,0,.3)" stroke="rgba(255,255,255,.14)"/>`+lens(33,33,15)+lens(33,69,12)+lens(69,33,10)+flash(69,66,5),
+  };
+  const gid="g"+a.body.slice(1)+a.cam;
+  return `<svg viewBox="0 0 ${w} ${h}" role="img" aria-hidden="true"><defs><linearGradient id="${gid}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".25"/></linearGradient></defs>
+  <rect x="1" y="1" width="${w-2}" height="${h-2}" rx="${r}" fill="${a.frame}"/>
+  <rect x="5" y="5" width="${w-10}" height="${h-10}" rx="${r-4}" fill="${a.body}"/>
+  <rect x="5" y="5" width="${w-10}" height="${h-10}" rx="${r-4}" fill="url(#${gid})"/>
+  ${bumps[a.cam]}</svg>`;
+}
+
+function shot(p,tags){
+  const ph = PHOTOS[p.id];
+  if(!ph) return `<div class="shot">${phoneSVG(p.art)}${tags}</div>`;
+  const imgs = ph.map((s,i)=>`<img src="${s}" alt="${fullName(p)}, foto ${i+1} de ${ph.length}" loading="${i?'lazy':'eager'}" decoding="async">`).join("");
+  const dots = ph.length>1 ? `<div class="dots">${ph.map((_,i)=>`<i class="${i?'':'on'}"></i>`).join("")}</div><button class="arr prev" data-dir="-1" aria-label="Foto anterior">‹</button><button class="arr next" data-dir="1" aria-label="Próxima foto">›</button>` : "";
+  return `<div class="shot photo"><div class="gal">${imgs}</div>${tags}${dots}</div>`;
+}
+function card(p){
+  if(p.brand==="acess"){
+    const msg = `Olá, CR Imports! Tenho interesse no ${p.model}. Ainda está disponível?`;
+    return `<article class="card">
+    ${shot(p,'<span class="tag ok">Disponível</span>')}
+    <div class="body">
+      <h3 class="name">${p.model}</h3>
+      <ul class="specs">${p.specs.map(s=>`<li>${s}</li>`).join("")}</ul>
+      <p class="inc">${p.note}</p>
+      <div class="price"><span>Valor</span><b>Consulte no WhatsApp</b></div>
+      <a class="btn pri" href="${waLink(msg)}" target="_blank" rel="noopener">Tenho interesse</a>
+    </div></article>`;
+  }
+  const x = p.brand==="xiaomi";
+  const spec = x ? `<li>${p.storage}</li><li>${p.ram} de RAM</li><li class="dim">Novo</li>`
+    : [p.storage, p.color].filter(Boolean).map(s=>`<li>${s}</li>`).join("") + `<li class="dim">Seminovo</li>`;
+  const on = Math.round((p.battery||0)/10);
+  const meter = Array.from({length:10},(_,i)=>`<i class="${i<on?'on':''}"></i>`).join("");
+  const mid = x ? `<div class="batt"><span>Estado</span><div class="meter" aria-hidden="true">${Array.from({length:10},()=>'<i class="on"></i>').join("")}</div><b>Lacrado</b></div><p class="inc">Na caixa, nunca usado</p>`
+    : `<div class="batt"><span>Bateria</span><div class="meter" aria-hidden="true">${meter}</div><b>${p.battery}%</b></div><p class="inc">Acompanha: ${p.box?'caixa e acessórios':'acessórios'}</p>`;
+  const msg = x ? `Olá, CR Imports! Tenho interesse no ${p.model} ${p.storage} / ${p.ram} RAM (lacrado). Ainda está disponível?`
+    : `Olá, CR Imports! Tenho interesse no ${fullName(p)} (bateria ${p.battery}%). Ainda está disponível?`;
+  const tags = x ? `<span class="tag">Lacrado</span>` : `<span class="tag">Seminovo</span>${p.box?'<span class="tag box">Com caixa</span>':''}`;
+  return `<article class="card">
+    ${shot(p,tags)}
+    <div class="body">
+      <h3 class="name">${p.model}</h3>
+      <ul class="specs">${spec}</ul>
+      ${mid}
+      <div class="price"><span>Valor</span><b>Consulte no WhatsApp</b></div>
+      <div class="actions">
+        <a class="btn pri" href="${waLink(msg)}" target="_blank" rel="noopener">Tenho interesse</a>
+        <button class="btn sec" data-upgrade="${p.id}">Trocar meu usado</button>
+      </div>
+    </div></article>`;
+}
+
+let cat = "iphone";
+try{ const h=location.hash.slice(1); if(CATS.some(c=>c.id===h)) cat=h; }catch(e){}
+function renderCatalog(){
+  document.getElementById("chips").innerHTML = CATS.map(c=>`<button class="chip" aria-pressed="${c.id===cat}" data-cat="${c.id}">${c.label}<span class="n">${c.items.length}</span></button>`).join("");
+  const c = CATS.find(x=>x.id===cat);
+  document.getElementById("cat-title").textContent = c.sub ? (c.id==="acess" ? `${c.label} à pronta entrega` : `${c.label} ${c.sub.toLowerCase()}`) : c.label;
+  const groupHead = (p,i,arr) => p.group && (i===0 || arr[i-1].group!==p.group) ? `<h3 class="ghead">${p.group}<span>${arr.filter(q=>q.group===p.group).length}</span></h3>` : "";
+  document.getElementById("grid").innerHTML = c.items.length ? c.items.map((p,i,arr)=>groupHead(p,i,arr)+card(p)).join("")
+    : `<div class="empty"><strong>${c.label} chegando em breve</strong>Quer algo específico? Fale com a gente no WhatsApp que verificamos para você.</div>`;
+}
+document.getElementById("chips").addEventListener("click",e=>{const b=e.target.closest("[data-cat]"); if(b){cat=b.dataset.cat; renderCatalog();}});
+document.getElementById("grid").addEventListener("click",e=>{
+  const a=e.target.closest("[data-dir]");
+  if(a){const g=a.parentElement.querySelector(".gal"); g.scrollBy({left:g.clientWidth*(+a.dataset.dir),behavior:"smooth"}); return;}
+  const b=e.target.closest("[data-upgrade]"); if(b){S.target=b.dataset.upgrade; show("troca");}
+});
+document.getElementById("grid").addEventListener("scroll",e=>{
+  const g=e.target; if(!g.classList||!g.classList.contains("gal")) return;
+  const i=Math.round(g.scrollLeft/g.clientWidth);
+  g.parentElement.querySelectorAll(".dots i").forEach((d,k)=>d.classList.toggle("on",k===i));
+},true);
+
+/* ---------- Troca Fácil ---------- */
+/* Valores-base de EXEMPLO (aparelho excelente, menor memória). Substituir pela tabela da loja. */
+const MODELS = {
+ iphone: [
+  ["iPhone 17",[["iPhone 17 Pro Max",6900,"pm17"],["iPhone 17 Pro",6000,"p17"],["iPhone 17 Air",4800,"n"],["iPhone 17",4300,"n"]]],
+  ["iPhone 16",[["iPhone 16 Pro Max",5200,"p"],["iPhone 16 Pro",4500,"p"],["iPhone 16 Plus",3700,"n"],["iPhone 16",3300,"n"],["iPhone 16e",2800,"n"]]],
+  ["iPhone 15",[["iPhone 15 Pro Max",4100,"pm15"],["iPhone 15 Pro",3500,"p"],["iPhone 15 Plus",2900,"n"],["iPhone 15",2600,"n"]]],
+  ["iPhone 14",[["iPhone 14 Pro Max",3300,"p"],["iPhone 14 Pro",2800,"p"],["iPhone 14 Plus",2200,"n"],["iPhone 14",2000,"n"]]],
+  ["iPhone 13",[["iPhone 13 Pro Max",2600,"p"],["iPhone 13 Pro",2200,"p"],["iPhone 13",1600,"n"],["iPhone 13 mini",1300,"n"]]],
+  ["iPhone 12",[["iPhone 12 Pro Max",1800,"o"],["iPhone 12 Pro",1500,"o"],["iPhone 12",1100,"o64"],["iPhone 12 mini",900,"o64"]]],
+  ["Anteriores",[["iPhone 11 Pro Max",1200,"o64"],["iPhone 11 Pro",1000,"o64"],["iPhone 11",800,"o64"],["iPhone XR",500,"o64"],["iPhone SE (2ª/3ª ger.)",600,"o64"]]],
+ ],
+ xiaomi: [
+  ["Redmi Note",[["Redmi Note 15 Pro",1300,"x"],["Redmi Note 15",950,"x"],["Redmi Note 14 Pro 5G",1100,"x"],["Redmi Note 14 Pro",950,"x"],["Redmi Note 14",750,"x"],["Redmi Note 13 Pro",800,"x"],["Redmi Note 13",600,"x"]]],
+  ["Redmi",[["Redmi 17",750,"x"],["Redmi 15",600,"x"],["Redmi 14C",400,"xs"],["Redmi 13",450,"xs"]]],
+  ["POCO e Xiaomi",[["POCO X7 Pro",1300,"x"],["POCO X6 Pro",1000,"x"],["Xiaomi 15T",2400,"x"],["Xiaomi 14T",1900,"x"]]],
+ ],
+};
+const STORAGE = {n:["128 GB","256 GB","512 GB"], p:["128 GB","256 GB","512 GB","1 TB"], pm15:["256 GB","512 GB","1 TB"], pm17:["256 GB","512 GB","1 TB","2 TB"], p17:["256 GB","512 GB","1 TB"], o:["128 GB","256 GB","512 GB"], o64:["64 GB","128 GB","256 GB"], x:["128 GB","256 GB","512 GB"], xs:["64 GB","128 GB","256 GB"]};
+const SCREEN = [["Excelente","Sem riscos visíveis",1],["Boa","Poucos riscos leves",.94],["Regular","Muitos riscos",.84],["Trincada","Vidro ou tela quebrada",.6]];
+const BODY = [["Excelente","Sem marcas de uso",1],["Boa","Marcas leves de uso",.95],["Regular","Muitas marcas",.86],["Quebrada","Traseira ou laterais danificadas",.65]];
+const XBATT = [["Dura o dia todo","Uso normal sem recarregar",1],["Precisa recarregar à tarde","Descarrega um pouco rápido",.93],["Descarrega muito rápido","Ou o aparelho esquenta",.82]];
+
+const FRESH = {brand:null, model:null, base:0, st:null, storage:null, battery:88, xbatt:null, screen:null, body:null, box:null, nf:null, repair:null, target:null};
+const S = {...FRESH, name:""};
+let step = 0;
+const steps = () => ["marca","modelo","memoria","bateria","tela","carcaca","extras","desejo","resultado"];
+
+function battFactor(){ if(S.brand==="xiaomi") return XBATT[S.xbatt][2]; const b=S.battery; return b>=90?1:b>=85?.95:b>=80?.9:.8; }
+const battLabel = () => S.brand==="xiaomi" ? XBATT[S.xbatt][0] : S.battery+"%";
+function estimate(){
+  const list = STORAGE[S.st]; const idx = list.indexOf(S.storage);
+  let v = S.base * (1 + .08*idx) * battFactor() * SCREEN[S.screen][2] * BODY[S.body][2];
+  if(S.box) v *= 1.03;
+  if(S.repair) v *= .88;
+  const lo = Math.floor(v*.93/50)*50, hi = Math.ceil(v*1.05/50)*50;
+  return [lo,hi];
+}
+const brl = n => n.toLocaleString("pt-BR",{style:"currency",currency:"BRL",maximumFractionDigits:0});
+const opt = (pressed, attrs, b, small) => `<button class="opt" aria-pressed="${pressed}" ${attrs}><b>${b}</b>${small?`<small>${small}</small>`:""}</button>`;
+const seg = (key,val) => `<div class="seg" role="group"><button aria-pressed="${val===true}" data-set="${key}" data-v="1">Sim</button><button aria-pressed="${val===false}" data-set="${key}" data-v="0">Não</button></div>`;
+
+function canNext(k){
+  return {marca:!!S.brand, modelo:!!S.model, memoria:!!S.storage, bateria:S.brand!=="xiaomi"||S.xbatt!==null, tela:S.screen!==null, carcaca:S.body!==null, extras:S.box!==null&&S.nf!==null&&S.repair!==null, desejo:true, resultado:true}[k];
+}
+
+function renderWiz(){
+  const ST = steps(); const k = ST[step]; let html = "";
+  if(k==="marca"){
+    html = `<h3>Qual celular você vai dar de entrada?</h3><p class="hint">Aceitamos iPhone e Xiaomi na troca.</p><div class="opts">` +
+      opt(S.brand==="iphone",`data-brand="iphone"`,"iPhone","Do XR ao 17 Pro Max") +
+      opt(S.brand==="xiaomi",`data-brand="xiaomi"`,"Xiaomi","Redmi, Redmi Note, POCO e Xiaomi") +
+      `<a class="opt" href="${waLink("Olá, CR Imports! Quero avaliar meu celular (Samsung/outra marca) para dar como entrada.")}" target="_blank" rel="noopener" style="text-decoration:none"><b>Samsung ou outra marca</b><small>Avaliamos direto pelo WhatsApp</small></a></div>`;
+  }
+  if(k==="modelo"){
+    html = `<h3>Qual é o modelo?</h3><p class="hint">${S.brand==="xiaomi"?"Veja em Configurações › Sobre o telefone.":"Veja em Ajustes › Geral › Sobre."}</p>` +
+      MODELS[S.brand].map(([g,ms])=>`<div class="group-label">${g}</div><div class="opts cols">${ms.map(([m,b,st])=>opt(S.model===m,`data-model="${m}" data-base="${b}" data-st="${st}"`,m)).join("")}</div>`).join("");
+  }
+  if(k==="memoria"){
+    html = `<h3>Quanto de armazenamento?</h3><p class="hint">${S.brand==="xiaomi"?"Configurações › Sobre o telefone › Armazenamento.":"Ajustes › Geral › Sobre."}</p><div class="opts cols">` +
+      STORAGE[S.st].map(s=>opt(S.storage===s,`data-storage="${s}"`,s)).join("") + `</div>`;
+  }
+  if(k==="bateria"){
+    html = S.brand==="xiaomi"
+      ? `<h3>Como está a bateria?</h3><p class="hint">Pense num dia de uso normal.</p><div class="opts">` + XBATT.map(([b,s],i)=>opt(S.xbatt===i,`data-xbatt="${i}"`,b,s)).join("") + `</div>`
+      : `<h3>Qual a saúde da bateria?</h3><p class="hint">Ajustes › Bateria › Saúde da Bateria.</p>
+      <div class="slider"><output id="bout">${S.battery}<small>%</small></output>
+      <input type="range" id="brange" min="60" max="100" value="${S.battery}" aria-label="Saúde da bateria em porcentagem">
+      <div class="scale"><span>60%</span><span>80%</span><span>100%</span></div></div>`;
+  }
+  if(k==="tela"){
+    html = `<h3>Como está a tela?</h3><p class="hint">Olhe com a tela desligada, contra a luz.</p><div class="opts">` +
+      SCREEN.map(([b,s],i)=>opt(S.screen===i,`data-screen="${i}"`,b,s)).join("") + `</div>`;
+  }
+  if(k==="carcaca"){
+    html = `<h3>E a carcaça?</h3><p class="hint">Traseira e laterais do aparelho.</p><div class="opts">` +
+      BODY.map(([b,s],i)=>opt(S.body===i,`data-body="${i}"`,b,s)).join("") + `</div>`;
+  }
+  if(k==="extras"){
+    html = `<h3>Mais alguns detalhes</h3><p class="hint">Isso ajuda a chegar num valor mais preciso.</p><div class="toggles">
+      <div class="tg"><div>Tem a caixa original?</div>${seg("box",S.box)}</div>
+      <div class="tg"><div>Tem nota fiscal ou comprovante?<small>Obrigatório apresentar na entrega</small></div>${seg("nf",S.nf)}</div>
+      <div class="tg"><div>Já passou por algum reparo?<small>Troca de tela, bateria ou peças</small></div>${seg("repair",S.repair)}</div></div>`;
+  }
+  if(k==="desejo"){
+    html = `<h3>Quer trocar por qual?</h3><p class="hint">Opcional. Escolha um aparelho do nosso estoque.</p>` +
+      `<div class="group-label">iPhone seminovos</div><div class="opts">` + IPHONES.map(p=>opt(S.target===p.id,`data-target="${p.id}"`,p.model,detail(p))).join("") + `</div>` +
+      `<div class="group-label">Xiaomi lacrados</div><div class="opts">` + XIAOMI.map(p=>opt(S.target===p.id,`data-target="${p.id}"`,p.model,detail(p))).join("") + `</div>` +
+      `<div class="group-label">Outro</div><div class="opts">` + opt(S.target==="none",`data-target="none"`,"Ainda não sei","Quero ver opções") + `</div>`;
+  }
+  if(k==="resultado"){
+    const [lo,hi] = estimate();
+    const t = STOCK.find(p=>p.id===S.target);
+    const rows = [["Aparelho",S.model],["Memória",S.storage],["Bateria",battLabel()],["Tela",SCREEN[S.screen][0]],["Carcaça",BODY[S.body][0]],["Caixa",S.box?"Sim":"Não"],["Nota fiscal",S.nf?"Sim":"Não"],["Reparo",S.repair?"Sim":"Não"],["Quero",t?t.model+" · "+detail(t):"Ainda não sei"]];
+    html = `<div class="result">
+      <div class="est"><div class="lbl">Estimativa do seu usado</div><div class="val">${brl(lo)} a ${brl(hi)}</div><p>Valor de referência. A proposta final é confirmada depois que avaliamos o aparelho.</p></div>
+      ${S.nf?"":`<div class="alert">Sem nota fiscal ou comprovante não conseguimos aceitar o aparelho. Se encontrar o documento, é só voltar e marcar “Sim”.</div>`}
+      <dl class="summary">${rows.map(([a,b])=>`<dt>${a}</dt><dd>${b}</dd>`).join("")}</dl>
+      <div class="field"><label for="nome">Seu nome</label><input id="nome" autocomplete="name" placeholder="Como podemos te chamar?" value="${S.name}"></div>
+      <a class="btn pri big" id="send" target="_blank" rel="noopener" href="#">Receber proposta no WhatsApp</a>
+    </div>`;
+  }
+  const pct = Math.round((step+1)/ST.length*100);
+  document.getElementById("wiz").innerHTML = `<div class="prog"><div class="track"><div class="fill" style="width:${pct}%"></div></div><span>${step+1}/${ST.length}</span></div>
+    <div class="step fade">${html}</div>
+    <div class="nav">${step>0?`<button class="btn sec" data-nav="-1">Voltar</button>`:"<span></span>"}
+    ${k!=="resultado"?`<button class="btn pri" data-nav="1" ${canNext(k)?"":"disabled"}>${k==="desejo"?"Ver estimativa":"Continuar"}</button>`:`<button class="btn sec" data-nav="reset">Nova simulação</button>`}</div>`;
+  if(k==="bateria" && S.brand!=="xiaomi"){
+    const r=document.getElementById("brange"), o=document.getElementById("bout");
+    r.addEventListener("input",()=>{S.battery=+r.value; o.innerHTML=S.battery+"<small>%</small>";});
+  }
+  if(k==="resultado"){
+    const upd=()=>{const [lo,hi]=estimate(); const t=STOCK.find(p=>p.id===S.target);
+      const msg=`Olá, CR Imports! Fiz a simulação no Troca Fácil.\n\nMeu aparelho: ${S.model} ${S.storage}\nBateria: ${battLabel()}\nTela: ${SCREEN[S.screen][0]}\nCarcaça: ${BODY[S.body][0]}\nCaixa: ${S.box?"Sim":"Não"} | Nota fiscal: ${S.nf?"Sim":"Não"} | Reparo: ${S.repair?"Sim":"Não"}\nEstimativa: ${brl(lo)} a ${brl(hi)}\n\nQuero trocar por: ${t?t.model+" ("+detail(t)+")":"ainda não sei"}${S.name?`\n\nNome: ${S.name}`:""}`;
+      document.getElementById("send").href=waLink(msg);};
+    const n=document.getElementById("nome"); n.addEventListener("input",()=>{S.name=n.value;upd();}); upd();
+  }
+}
+
+document.getElementById("wiz").addEventListener("click",e=>{
+  const b = e.target.closest("button"); if(!b) return;
+  const d = b.dataset;
+  if(d.brand){ if(S.brand!==d.brand){Object.assign(S,{model:null,st:null,storage:null,xbatt:null});} S.brand=d.brand; }
+  else if(d.model){S.model=d.model;S.base=+d.base; if(S.st!==d.st){S.storage=null;} S.st=d.st;}
+  else if(d.storage){S.storage=d.storage;}
+  else if(d.xbatt!==undefined){S.xbatt=+d.xbatt;}
+  else if(d.screen!==undefined){S.screen=+d.screen;}
+  else if(d.body!==undefined){S.body=+d.body;}
+  else if(d.set){S[d.set]=d.v==="1";}
+  else if(d.target){S.target=d.target;}
+  else if(d.nav){
+    if(d.nav==="reset"){Object.assign(S,FRESH); step=0;}
+    else {step=Math.max(0,Math.min(steps().length-1,step+(+d.nav)));}
+    renderWiz(); document.getElementById("wiz").scrollIntoView({block:"nearest"}); return;
+  }
+  /* escolha única avança sozinha */
+  const auto = d.brand||d.model||d.storage||d.xbatt!==undefined||d.screen!==undefined||d.body!==undefined;
+  if(auto && step<steps().length-1){step++;}
+  renderWiz();
+});
+
+/* ---------- Abas ---------- */
+function show(v){
+  document.querySelectorAll(".view").forEach(s=>s.hidden = s.id!==v);
+  document.querySelectorAll(".tab").forEach(t=>t.setAttribute("aria-selected", t.dataset.view===v));
+  if(v==="troca") renderWiz();
+  window.scrollTo({top:0});
+  try{history.replaceState(null,"","#"+v);}catch(e){}
+}
+document.querySelectorAll("[data-view]").forEach(t=>t.addEventListener("click",()=>show(t.dataset.view)));
+document.querySelectorAll("[data-go]").forEach(t=>t.addEventListener("click",()=>show(t.dataset.go)));
+document.querySelector(".brand").addEventListener("click",e=>{e.preventDefault();show("catalogo");});
+
+document.getElementById("copy").addEventListener("click",async e=>{
+  const b=e.currentTarget;
+  try{await navigator.clipboard.writeText("+55 91 98532-7797"); b.textContent="Copiado";}
+  catch(_){const r=document.createRange(); r.selectNodeContents(document.getElementById("phone")); const s=getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent="Selecionado";}
+  setTimeout(()=>b.textContent="Copiar",1800);
+});
+
+renderCatalog();
+show(location.hash==="#troca"?"troca":"catalogo");
+</script>
+
+</body>
+</html>
