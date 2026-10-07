@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#060708">
 <meta property="og:title" content="CR Imports | Celulares & Acessórios">
-<meta property="og:description" content="iPhones seminovos, Xiaomi lacrados e acessórios. Seu usado vale como entrada. Parcele em até 18x.">
+<meta property="og:description" content="iPhones seminovos, Xiaomi e iPad lacrados, smartwatches, fones e capinhas. Seu usado vale como entrada. Parcele em até 18x.">
 <meta property="og:image" content="img/logo.png">
 <link rel="icon" href="img/logo.png">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
@@ -76,6 +76,7 @@ h2{font-family:var(--f-display);font-weight:500;font-size:clamp(20px,2.6vw,26px)
 .shot{position:relative;aspect-ratio:4/5;overflow:hidden;max-width:100%;background:radial-gradient(120% 90% at 50% 20%,var(--surface-2),var(--bg));display:grid;place-items:center;border-bottom:1px solid var(--line)}
 .shot svg{height:80%;width:auto;max-width:70%;filter:drop-shadow(0 18px 28px rgba(0,0,0,.55))}
 .shot.photo{display:block;background:var(--surface-2)}
+.shot .ico-ph{width:38%;height:auto;max-width:none;filter:none;color:var(--blue);opacity:.85}
 .gal{display:flex;height:100%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain}
 .gal::-webkit-scrollbar{display:none}
 .gal img{flex:0 0 100%;width:100%;height:100%;object-fit:cover;scroll-snap-align:start;display:block}
@@ -227,7 +228,7 @@ footer img{height:34px;width:auto;display:block}
       <div>
         <div class="eyebrow">Celulares &amp; acessórios · Pará</div>
         <h1>Seu próximo celular <em>está aqui.</em> Seu usado entra na conta.</h1>
-        <p class="lead">iPhones seminovos com a saúde da bateria informada e Xiaomi lacrados. Escolha, simule a troca e feche pelo WhatsApp.</p>
+        <p class="lead">iPhones seminovos com a saúde da bateria informada, Xiaomi e iPad lacrados, smartwatches, fones e capinhas. Escolha, simule a troca e feche pelo WhatsApp.</p>
       </div>
       <ul class="perks">
         <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8h13l-3-3M20 16H7l3 3"/></svg><div>Seu usado vale como entrada<small>Simule o valor na aba Troca Fácil</small></div></li>
@@ -300,7 +301,7 @@ footer img{height:34px;width:auto;display:block}
 const WA = "5591985327797";
 const waLink = t => "https://wa.me/" + WA + "?text=" + encodeURIComponent(t);
 
-const PHOTOS = {"16pm": ["img/16pm-1.jpg", "img/16pm-2.jpg", "img/16pm-3.jpg", "img/16pm-4.jpg", "img/16pm-5.jpg", "img/16pm-6.jpg"], "12pm": ["img/12pm-1.jpg", "img/12pm-2.jpg", "img/12pm-3.jpg", "img/12pm-4.jpg", "img/12pm-5.jpg"], "13": ["img/13-1.jpg", "img/13-2.jpg", "img/13-3.jpg", "img/13-4.jpg"], "14p": ["img/14p-1.jpg", "img/14p-2.jpg", "img/14p-3.jpg", "img/14p-4.jpg", "img/14p-5.jpg"], "a-wultra2": ["img/a-wultra2-1.jpg"], "a-wultra": ["img/a-wultra-1.jpg", "img/a-wultra-2.jpg"], "a-n11": ["img/a-n11-1.jpg", "img/a-n11-2.jpg"], "a-hwmini2": ["img/a-hwmini2-1.jpg", "img/a-hwmini2-2.jpg"], "a-p9": ["img/a-p9-1.jpg"], "a-airdots": ["img/a-airdots-1.jpg", "img/a-airdots-2.jpg"], "a-havit": ["img/a-havit-1.jpg"], "a-fones": ["img/a-fones-1.jpg"], "a-c35": ["img/a-c35-1.jpg"], "a-c20": ["img/a-c20-1.jpg"], "a-lelong30": ["img/a-lelong30-1.jpg"], "a-hm30kit": ["img/a-hm30kit-1.jpg"], "a-hm30": ["img/a-hm30-1.jpg", "img/a-hm30-2.jpg"], "a-peining20": ["img/a-peining20-1.jpg"], "a-cabo2m": ["img/a-cabo2m-1.jpg", "img/a-cabo2m-2.jpg"], "a-cabo1m": ["img/a-cabo1m-1.jpg"], "a-mouse": ["img/a-mouse-1.jpg", "img/a-mouse-2.jpg"], "a-mic": ["img/a-mic-1.jpg"]};
+const PHOTOS = {"16pm": ["img/16pm-1.jpg", "img/16pm-2.jpg", "img/16pm-3.jpg", "img/16pm-4.jpg", "img/16pm-5.jpg", "img/16pm-6.jpg"], "14p": ["img/14p-1.jpg", "img/14p-2.jpg", "img/14p-3.jpg", "img/14p-4.jpg", "img/14p-5.jpg"], "12pm": ["img/12pm-1.jpg", "img/12pm-2.jpg", "img/12pm-3.jpg", "img/12pm-4.jpg", "img/12pm-5.jpg"], "13": ["img/13-1.jpg", "img/13-2.jpg", "img/13-3.jpg", "img/13-4.jpg"], "rn14p": ["img/rn14p-1.jpg"], "rn15": ["img/rn15-1.jpg"], "r15a": ["img/r15a-1.jpg"], "a-s11": ["img/a-s11-1.jpg", "img/a-s11-2.jpg", "img/a-s11-3.jpg", "img/a-s11-4.jpg", "img/a-s11-5.jpg", "img/a-s11-6.jpg", "img/a-s11-7.jpg"], "a-wultra2": ["img/a-wultra2-1.jpg", "img/a-wultra2-2.jpg", "img/a-wultra2-3.jpg", "img/a-wultra2-4.jpg", "img/a-wultra2-5.jpg", "img/a-wultra2-6.jpg"], "a-wultra4": ["img/a-wultra4-1.jpg"], "a-u5x": ["img/a-u5x-1.jpg", "img/a-u5x-2.jpg", "img/a-u5x-3.jpg"], "a-ma27": ["img/a-ma27-1.jpg", "img/a-ma27-2.jpg", "img/a-ma27-3.jpg", "img/a-ma27-4.jpg"], "a-wultra": ["img/a-wultra-1.jpg", "img/a-wultra-2.jpg"], "a-n11": ["img/a-n11-1.jpg", "img/a-n11-2.jpg", "img/a-n11-3.jpg"], "a-hwmini2": ["img/a-hwmini2-1.jpg", "img/a-hwmini2-2.jpg"], "a-airpods": ["img/a-airpods-1.jpg", "img/a-airpods-2.jpg"], "a-zonebuds": ["img/a-zonebuds-1.jpg", "img/a-zonebuds-2.jpg", "img/a-zonebuds-3.jpg", "img/a-zonebuds-4.jpg", "img/a-zonebuds-5.jpg", "img/a-zonebuds-6.jpg"], "a-ka790": ["img/a-ka790-1.jpg"], "a-p9": ["img/a-p9-1.jpg", "img/a-p9-2.jpg", "img/a-p9-3.jpg", "img/a-p9-4.jpg", "img/a-p9-5.jpg", "img/a-p9-6.jpg"], "a-airdots": ["img/a-airdots-1.jpg", "img/a-airdots-2.jpg", "img/a-airdots-3.jpg"], "a-havit": ["img/a-havit-1.jpg"], "a-fones": ["img/a-fones-1.jpg"], "c-silicone": ["img/c-silicone-1.jpg", "img/c-silicone-2.jpg", "img/c-silicone-3.jpg"], "c-clearmag": ["img/c-clearmag-1.jpg", "img/c-clearmag-2.jpg"], "c-cxc": ["img/c-cxc-1.jpg", "img/c-cxc-2.jpg", "img/c-cxc-3.jpg"], "c-classica": ["img/c-classica-1.jpg", "img/c-classica-2.jpg", "img/c-classica-3.jpg"], "c-space": ["img/c-space-1.jpg", "img/c-space-2.jpg", "img/c-space-3.jpg", "img/c-space-4.jpg"], "c-ip17": ["img/c-ip17-1.jpg"], "c-fume": ["img/c-fume-1.jpg"], "c-strass": ["img/c-strass-1.jpg"], "a-c35": ["img/a-c35-1.jpg"], "a-c20": ["img/a-c20-1.jpg"], "a-lelong30": ["img/a-lelong30-1.jpg"], "a-hm30kit": ["img/a-hm30kit-1.jpg"], "a-hm30": ["img/a-hm30-1.jpg", "img/a-hm30-2.jpg"], "a-peining20": ["img/a-peining20-1.jpg"], "a-cabo2m": ["img/a-cabo2m-1.jpg", "img/a-cabo2m-2.jpg"], "a-cabo1m": ["img/a-cabo1m-1.jpg"], "a-mouse": ["img/a-mouse-1.jpg", "img/a-mouse-2.jpg"], "a-mic": ["img/a-mic-1.jpg"], "ipad10": ["img/ipad10-1.jpg"]};
 /* ---------- Estoque (listas do Gustavo, 06/10/2026) ---------- */
 const IPHONES = [
   {id:"16pm", brand:"iphone", model:"iPhone 16 Pro Max", storage:"256 GB", color:"Natural Titânio", battery:91, box:true, art:{body:"#c2bbb0", frame:"#a7a093", cam:"pro", big:true}},
@@ -317,31 +318,64 @@ const XIAOMI = [
   {id:"r15a",  brand:"xiaomi", model:"Redmi 15", storage:"128 GB", ram:"6 GB", sealed:true, art:{body:"#1f2329", frame:"#2f343c", cam:"redmi"}},
 ];
 const STOCK = [...IPHONES, ...XIAOMI];
-/* Acessórios: nomes tirados das caixas nas fotos do Gustavo (06/10/2026) */
-const ACESS = [
-  {id:"a-wultra2", group:"Smartwatches", model:"Smartwatch Microwear Watch Ultra 2", specs:["Pode nadar","Faz ligações"], note:"Acompanha pulseira e carregador magnético"},
-  {id:"a-wultra", group:"Smartwatches", model:"Smartwatch Microwear Watch Ultra 47 mm", specs:["47 mm","WhatsApp no relógio"], note:"Caixa redonda com pulseira laranja"},
-  {id:"a-n11", group:"Smartwatches", model:"Smartwatch N11 Ultra", specs:["Ligações por Bluetooth","Assistente de voz","Carregamento sem fio"], note:"Pulseira oceano preta"},
-  {id:"a-hwmini2", group:"Smartwatches", model:"Smartwatch HW Mini 2 com 7 pulseiras", specs:["Kit presente","7 pulseiras","Chat GPT"], note:"Acompanha carregador. Ótimo para presente"},
-  {id:"a-p9", group:"Fones e áudio", model:"Headphone Bluetooth P9", specs:["Sem fio","Preto ou prata"], note:"Estilo over-ear, confortável para usar o dia todo"},
-  {id:"a-airdots", group:"Fones e áudio", model:"Fone sem fio Redmi AirDots Pro", specs:["Bluetooth","Visor de bateria no estojo"], note:"Estojo carregador compacto"},
-  {id:"a-havit", group:"Fones e áudio", model:"Headset Gamer Havit GameNote H2230d", specs:["P2 3,5 mm","Alto-falante 50 mm","Microfone"], note:"Para PC, console e celular"},
-  {id:"a-fones", group:"Fones e áudio", model:"Fones de ouvido variados", specs:["JBL","Basike","Lehmox","Wearzone","Ebos"], note:"Vários modelos com e sem fio. Pergunte pelo seu"},
-  {id:"a-c35", group:"Carregadores e cabos", model:"Carregador 35W USB-C com cabo USB-C", specs:["35W","Para iPhone 15 em diante"], note:"Fonte + cabo USB-C para USB-C"},
-  {id:"a-c20", group:"Carregadores e cabos", model:"Carregador 20W USB-C com cabo Lightning", specs:["20W","Para iPhone com Lightning"], note:"Fonte + cabo USB-C para Lightning"},
-  {id:"a-lelong30", group:"Carregadores e cabos", model:"Carregador Turbo Lelong 30W PD", specs:["30W","Cabo iOS 1 m","Anatel"], note:"Modelo LE-297CP"},
-  {id:"a-hm30kit", group:"Carregadores e cabos", model:"Carregador H'Maston 30W USB-C com cabo iOS", specs:["30W","USB-C"], note:"Fonte + cabo para iPhone"},
-  {id:"a-hm30", group:"Carregadores e cabos", model:"Fonte H'Maston 30W USB-C", specs:["30W","USB-C"], note:"Só a fonte, use com seu cabo"},
-  {id:"a-peining20", group:"Carregadores e cabos", model:"Kit Carregador Turbo Peining 20W", specs:["20W","USB","Turbo Power 3.0","Anatel"], note:"Fonte + cabo para iPhone"},
-  {id:"a-cabo2m", group:"Carregadores e cabos", model:"Cabo H'Maston USB-C para Lightning 2 m", specs:["27W","2 metros","Trançado"], note:"Modelo SJX55-PD2M, ultrafino"},
-  {id:"a-cabo1m", group:"Carregadores e cabos", model:"Cabo USB-C para Lightning 1 m", specs:["27W","1 metro"], note:"Carregamento rápido para iPhone"},
-  {id:"a-mouse", group:"Gamer e outros", model:"Mouse Gamer Lehmox LEY-2312", specs:["Iluminação RGB","Design ergonômico"], note:"Mouse gamer competitivo"},
-  {id:"a-mic", group:"Gamer e outros", model:"Microfone de lapela sem fio Basike", specs:["Para iPhone (Lightning)","Clipe magnético"], note:"Modelo Ba-MIC0006, ótimo para gravar vídeos"},
-].map(a=>({...a, brand:"acess"}));
+/* Acessórios: nomes tirados das caixas nas fotos do Gustavo (06 e 07/10/2026) */
+const A = items => items.map(a=>({...a, brand:"acess"}));
+const RELOGIOS = A([
+  {id:"a-s11", model:"Smartwatch Microwear Watch S11", specs:["Faz e recebe ligações","Batimentos cardíacos","Monitoramento do sono","Ciclo feminino"], note:"Acompanha 1 capinha protetora"},
+  {id:"a-wultra2", model:"Smartwatch Microwear Watch Ultra 2", specs:["Pode nadar","Faz ligações","Modos de esporte","Controle de sono"], note:"Acompanha pulseira e carregador magnético"},
+  {id:"a-wultra4", model:"Smartwatch Microwear Watch Ultra 4", specs:["Tela AMOLED","Faz ligações"], note:"Lançamento da linha Watch Ultra"},
+  {id:"a-u5x", model:"Smartwatch Microwear Watch Ultra 5X (U5X)", specs:["WearmaxOS","Faz ligações","Controle de atividades"], note:"Pulseira preta ou branca"},
+  {id:"a-ma27", model:"Smartwatch Microwear MA27", specs:["Assistente de voz","WhatsApp no relógio","Prata ou laranja"], note:"Caixa redonda com acabamento prateado"},
+  {id:"a-wultra", model:"Smartwatch Microwear Watch Ultra 47 mm", specs:["47 mm","WhatsApp no relógio"], note:"Caixa redonda com pulseira laranja"},
+  {id:"a-n11", model:"Smartwatch N11 Ultra", specs:["Ligações por Bluetooth","Assistente de voz","Carregamento sem fio"], note:"Pulseira preta ou laranja"},
+  {id:"a-hwmini2", model:"Smartwatch HW Mini 2 com 7 pulseiras", specs:["Kit presente","7 pulseiras","Chat GPT"], note:"Acompanha carregador. Ótimo para presente"},
+]);
+const FONES = A([
+  {id:"a-airpods", model:"AirPods Pro (2ª geração)", specs:["Estojo de carregamento","Pontas extras","Cabo incluso"], note:"Na caixa, com todos os itens"},
+  {id:"a-zonebuds", model:"Fone sem fio Wearzone Zone Buds 01", specs:["ENC para chamadas em HD","Bateria 32 horas","Latência 68 ms","IPX4"], note:"Branco, com estojo carregador"},
+  {id:"a-ka790", model:"Fone gamer sem fio Kapbom KA-790", specs:["Para jogos e música","Visor de bateria","Bluetooth"], note:"Estojo com luz e visor digital"},
+  {id:"a-p9", model:"Headphone Bluetooth P9", specs:["Sem fio","Preto ou prata"], note:"Estilo over-ear, confortável para usar o dia todo"},
+  {id:"a-airdots", model:"Fone sem fio Redmi AirDots Pro", specs:["Bluetooth","Visor de bateria no estojo"], note:"Estojo carregador compacto"},
+  {id:"a-havit", model:"Headset Gamer Havit GameNote H2230d", specs:["P2 3,5 mm","Alto-falante 50 mm","Microfone"], note:"Para PC, console e celular"},
+  {id:"a-fones", model:"Fones de ouvido variados", specs:["JBL","Basike","Lehmox","Wearzone","Ebos"], note:"Vários modelos com e sem fio. Pergunte pelo seu"},
+]);
+const CAPAS = A([
+  {id:"c-silicone", model:"Capinha Silicone Case", specs:["iPhone 12 / 12 Pro","iPhone 13 Pro Max","Várias cores"], note:"Pergunte pela cor e pelo modelo do seu iPhone"},
+  {id:"c-clearmag", model:"Capinha transparente Clear Case Magnetic", specs:["MagSafe","iPhone 13 Pro Max","iPhone 14 e 14 Pro Max"], note:"Transparente, com ímã para MagSafe"},
+  {id:"c-cxc", model:"Capinha CxC MagSafe com anel suporte", specs:["MagSafe","Anel vira suporte","iPhone 14 e 14 Pro Max"], note:"Fundo fosco com proteção da câmera"},
+  {id:"c-classica", model:"Capinha Case Classica com brilho", specs:["MagSafe","Suporte na câmera","iPhone 15 Pro Max"], note:"Preta, roxa ou transparente com glitter"},
+  {id:"c-space", model:"Capinha transparente Space Collection", specs:["Antiqueda","iPhone 12 ao 15"], note:"Bordas reforçadas, vários modelos"},
+  {id:"c-ip17", model:"Capinha magnética para iPhone 17", specs:["MagSafe","iPhone 17"], note:"Fosca com proteção da câmera"},
+  {id:"c-fume", model:"Capinha fumê MagSafe", specs:["MagSafe","Fumê","iPhone 11"], note:"Acabamento fumê translúcido"},
+  {id:"c-strass", model:"Capinha com strass", specs:["Brilho","Azul ou dourada"], note:"Para quem gosta de brilho"},
+]);
+const CARREG = A([
+  {id:"a-c35", model:"Carregador 35W USB-C com cabo USB-C", specs:["35W","Para iPhone 15 em diante"], note:"Fonte + cabo USB-C para USB-C"},
+  {id:"a-c20", model:"Carregador 20W USB-C com cabo Lightning", specs:["20W","Para iPhone com Lightning"], note:"Fonte + cabo USB-C para Lightning"},
+  {id:"a-lelong30", model:"Carregador Turbo Lelong 30W PD", specs:["30W","Cabo iOS 1 m","Anatel"], note:"Modelo LE-297CP"},
+  {id:"a-hm30kit", model:"Carregador H'Maston 30W USB-C com cabo iOS", specs:["30W","USB-C"], note:"Fonte + cabo para iPhone"},
+  {id:"a-hm30", model:"Fonte H'Maston 30W USB-C", specs:["30W","USB-C"], note:"Só a fonte, use com seu cabo"},
+  {id:"a-peining20", model:"Kit Carregador Turbo Peining 20W", specs:["20W","USB","Turbo Power 3.0","Anatel"], note:"Fonte + cabo para iPhone"},
+  {id:"a-cabo2m", model:"Cabo H'Maston USB-C para Lightning 2 m", specs:["27W","2 metros","Trançado"], note:"Modelo SJX55-PD2M, ultrafino"},
+  {id:"a-cabo1m", model:"Cabo USB-C para Lightning 1 m", specs:["27W","1 metro"], note:"Carregamento rápido para iPhone"},
+]);
+const GAMER = A([
+  {id:"g-gamestick", model:"Game Stick 4K Pro", specs:["2 controles sem fio","4K","Sem fio 2.4G"], note:"Videogame que liga direto na TV. Peça fotos no WhatsApp", icon:"game"},
+  {id:"a-mouse", model:"Mouse Gamer Lehmox LEY-2312", specs:["Iluminação RGB","Design ergonômico"], note:"Mouse gamer competitivo"},
+  {id:"a-mic", model:"Microfone de lapela sem fio Basike", specs:["Para iPhone (Lightning)","Clipe magnético"], note:"Modelo Ba-MIC0006, ótimo para gravar vídeos"},
+]);
+const IPADS = A([
+  {id:"ipad10", model:"iPad 10ª geração", specs:["Lacrado","Azul, prata ou rosa"], note:"Novo na caixa. Consulte a memória disponível", tag:"Lacrado"},
+]);
 const CATS = [
-  {id:"iphone", label:"iPhone", items:IPHONES, sub:"Seminovos"},
-  {id:"xiaomi", label:"Xiaomi", items:XIAOMI, sub:"Lacrados"},
-  {id:"acess", label:"Acessórios", items:ACESS, sub:"Pronta entrega"},
+  {id:"iphone", label:"iPhone", items:IPHONES, title:"iPhone seminovos"},
+  {id:"xiaomi", label:"Xiaomi", items:XIAOMI, title:"Xiaomi lacrados"},
+  {id:"ipad", label:"iPad", items:IPADS, title:"iPad lacrado"},
+  {id:"relogios", label:"Smartwatches", items:RELOGIOS, title:"Smartwatches à pronta entrega"},
+  {id:"fones", label:"Fones", items:FONES, title:"Fones e áudio"},
+  {id:"capinhas", label:"Capinhas", items:CAPAS, title:"Capinhas para iPhone"},
+  {id:"carregadores", label:"Carregadores", items:CARREG, title:"Carregadores e cabos"},
+  {id:"gamer", label:"Gamer e outros", items:GAMER, title:"Gamer e outros"},
 ];
 const fullName = p => [p.model, p.storage, p.color].filter(Boolean).join(" ");
 const detail = p => p.brand==="xiaomi" ? [p.storage, p.ram+" RAM", "lacrado"].join(" · ") : [p.storage, p.color, "bateria "+p.battery+"%"].filter(Boolean).join(" · ");
@@ -365,9 +399,13 @@ function phoneSVG(a){
   ${bumps[a.cam]}</svg>`;
 }
 
+const ICONS = {
+  game:`<svg class="ico-ph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M6 9h4M8 7v4M15 10h.01M18 8h.01"/><path d="M17.3 5H6.7a4 4 0 0 0-3.95 3.4l-.9 6.2A2.4 2.4 0 0 0 4.2 17.4c.8 0 1.5-.4 1.9-1l1.2-1.9h9.4l1.2 1.9c.4.6 1.1 1 1.9 1a2.4 2.4 0 0 0 2.35-2.8l-.9-6.2A4 4 0 0 0 17.3 5z"/></svg>`,
+  box:`<svg class="ico-ph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M21 8l-9-5-9 5 9 5 9-5zM3 8v8l9 5 9-5V8M12 13v8"/></svg>`,
+};
 function shot(p,tags){
   const ph = PHOTOS[p.id];
-  if(!ph) return `<div class="shot">${phoneSVG(p.art)}${tags}</div>`;
+  if(!ph) return `<div class="shot">${p.art?phoneSVG(p.art):ICONS[p.icon||"box"]}${tags}</div>`;
   const imgs = ph.map((s,i)=>`<img src="${s}" alt="${fullName(p)}, foto ${i+1} de ${ph.length}" loading="${i?'lazy':'eager'}" decoding="async">`).join("");
   const dots = ph.length>1 ? `<div class="dots">${ph.map((_,i)=>`<i class="${i?'':'on'}"></i>`).join("")}</div><button class="arr prev" data-dir="-1" aria-label="Foto anterior">‹</button><button class="arr next" data-dir="1" aria-label="Próxima foto">›</button>` : "";
   return `<div class="shot photo"><div class="gal">${imgs}</div>${tags}${dots}</div>`;
@@ -376,7 +414,7 @@ function card(p){
   if(p.brand==="acess"){
     const msg = `Olá, CR Imports! Tenho interesse no ${p.model}. Ainda está disponível?`;
     return `<article class="card">
-    ${shot(p,'<span class="tag ok">Disponível</span>')}
+    ${shot(p, p.tag ? `<span class="tag">${p.tag}</span>` : '<span class="tag ok">Disponível</span>')}
     <div class="body">
       <h3 class="name">${p.model}</h3>
       <ul class="specs">${p.specs.map(s=>`<li>${s}</li>`).join("")}</ul>
@@ -414,9 +452,8 @@ try{ const h=location.hash.slice(1); if(CATS.some(c=>c.id===h)) cat=h; }catch(e)
 function renderCatalog(){
   document.getElementById("chips").innerHTML = CATS.map(c=>`<button class="chip" aria-pressed="${c.id===cat}" data-cat="${c.id}">${c.label}<span class="n">${c.items.length}</span></button>`).join("");
   const c = CATS.find(x=>x.id===cat);
-  document.getElementById("cat-title").textContent = c.sub ? (c.id==="acess" ? `${c.label} à pronta entrega` : `${c.label} ${c.sub.toLowerCase()}`) : c.label;
-  const groupHead = (p,i,arr) => p.group && (i===0 || arr[i-1].group!==p.group) ? `<h3 class="ghead">${p.group}<span>${arr.filter(q=>q.group===p.group).length}</span></h3>` : "";
-  document.getElementById("grid").innerHTML = c.items.length ? c.items.map((p,i,arr)=>groupHead(p,i,arr)+card(p)).join("")
+  document.getElementById("cat-title").textContent = c.title || c.label;
+  document.getElementById("grid").innerHTML = c.items.length ? c.items.map(card).join("")
     : `<div class="empty"><strong>${c.label} chegando em breve</strong>Quer algo específico? Fale com a gente no WhatsApp que verificamos para você.</div>`;
 }
 document.getElementById("chips").addEventListener("click",e=>{const b=e.target.closest("[data-cat]"); if(b){cat=b.dataset.cat; renderCatalog();}});
