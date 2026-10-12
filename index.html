@@ -126,6 +126,23 @@ h2{font-family:var(--f-display);font-weight:500;font-size:clamp(20px,2.6vw,26px)
 .upsell p{margin:0;color:#c9d6f5}
 .upsell .btn{background:var(--fg);color:var(--bg)}
 @media (max-width:640px){.upsell{grid-template-columns:1fr}}
+.cardsim{margin-block:28px;padding:24px;border-radius:var(--r);background:var(--surface);border:1px solid var(--line)}
+.cs-head h3{font-family:var(--f-display);font-weight:700;font-size:clamp(18px,2.4vw,24px);margin:8px 0 4px}
+.cs-head p{margin:0;color:var(--muted)}
+.cs-form{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0}
+.cs-form label{display:grid;gap:6px;font-size:13px;color:var(--muted);font-weight:600}
+.money{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:12px;padding:0 14px;background:var(--bg)}
+.money:focus-within{border-color:var(--blue)}
+.money i{font-style:normal;color:var(--muted);font-family:var(--f-mono)}
+.money input{flex:1;min-width:0;border:0;background:transparent;color:var(--fg);font-size:20px;font-weight:700;padding:12px 0;outline:none;font-variant-numeric:tabular-nums}
+.cs-out{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.cs-row{display:grid;gap:2px;padding:10px 12px;border:1px solid var(--line);border-radius:12px;font-variant-numeric:tabular-nums}
+.cs-row b{font-size:16px}.cs-row b span{color:var(--muted);font-weight:600;font-size:13px;margin-right:4px}
+.cs-row small{color:var(--muted);font-size:12px}
+.cs-row.free{border-color:color-mix(in srgb,var(--ok) 45%,var(--line))}.cs-row.free small{color:var(--ok)}
+.cs-empty{grid-column:1/-1;color:var(--muted);font-size:14px}
+.cs-note{margin:12px 0 0;font-size:12px;color:var(--muted)}
+@media (max-width:640px){.cs-form{grid-template-columns:1fr}.cs-out{grid-template-columns:repeat(2,minmax(0,1fr))}.cs-row b{font-size:15px;overflow-wrap:anywhere}}
 
 /* FAQ */
 .faq{padding-block:20px 40px;display:grid;grid-template-columns:.8fr 1.2fr;gap:24px}
@@ -253,6 +270,20 @@ footer img{height:34px;width:auto;display:block}
       </div>
       <button class="btn big" data-go="troca">Simular minha troca</button>
     </div>
+
+    <section class="cardsim" id="cardsim" hidden aria-labelledby="cardsim-t">
+      <div class="cs-head">
+        <div class="eyebrow">Cartão de crédito</div>
+        <h3 id="cardsim-t">Simule o parcelamento em até 18x</h3>
+        <p>Digite o valor do aparelho. Se for dar entrada (Pix ou seu usado), coloque também para parcelar só o restante.</p>
+      </div>
+      <div class="cs-form">
+        <label>Valor da compra<span class="money"><i>R$</i><input id="cs-valor" inputmode="numeric" placeholder="0" autocomplete="off"></span></label>
+        <label>Entrada (opcional)<span class="money"><i>R$</i><input id="cs-entrada" inputmode="numeric" placeholder="0" autocomplete="off"></span></label>
+      </div>
+      <div class="cs-out" id="cs-out" aria-live="polite"></div>
+      <p class="cs-note" id="cs-note"></p>
+    </section>
 
     <div class="faq">
       <div>
@@ -630,6 +661,31 @@ document.getElementById("copy").addEventListener("click",async e=>{
 
 renderCatalog();
 show(location.hash==="#troca"?"troca":"catalogo");
+/* ---------- Simulador de cartão ----------
+   Fica escondido até a loja mandar as taxas reais. Para ligar, preencha CARD:
+   taxas: % da maquininha por número de parcelas (1 a 18).
+   semJuros: até quantas parcelas a loja absorve a taxa (0 = cliente paga sempre).
+   O total para o cliente é valor / (1 - taxa), assim a loja recebe o valor cheio. */
+const CARD = null; // ex.: {semJuros:0, taxas:{1:0, 2:0, /* ... */ 18:0}}
+function renderCardSim(){
+  const num = id => +(document.getElementById(id).value.replace(/\D/g,"")||0);
+  const v = Math.max(0, num("cs-valor") - num("cs-entrada"));
+  const money = n => n.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+  const out = document.getElementById("cs-out");
+  if(!v){ out.innerHTML = `<p class="cs-empty">Digite um valor para ver as parcelas.</p>`; return; }
+  out.innerHTML = Array.from({length:18},(_,i)=>i+1).filter(n=>CARD.taxas[n]!=null).map(n=>{
+    const free = n<=CARD.semJuros, total = free ? v : v/(1-CARD.taxas[n]/100);
+    return `<div class="cs-row${free?' free':''}"><b><span>${n}x</span>${money(total/n)}</b><small>${free?'sem juros':'total '+money(total)}</small></div>`;
+  }).join("");
+}
+if(CARD){
+  document.getElementById("cardsim").hidden = false;
+  document.getElementById("cs-note").textContent = "Simulação. O valor final é confirmado no WhatsApp na hora da compra.";
+  ["cs-valor","cs-entrada"].forEach(id=>document.getElementById(id).addEventListener("input",e=>{
+    const d=e.target.value.replace(/\D/g,""); e.target.value = d ? (+d).toLocaleString("pt-BR") : ""; renderCardSim();
+  }));
+  renderCardSim();
+}
 </script>
 
 </body>
