@@ -81,7 +81,7 @@ h2{font-family:var(--f-display);font-weight:500;font-size:clamp(20px,2.6vw,26px)
 .shot .ico-ph{width:38%;height:auto;max-width:none;filter:none;color:var(--blue);opacity:.85}
 .gal{display:flex;height:100%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain}
 .gal::-webkit-scrollbar{display:none}
-.gal img.cover{object-fit:contain;background:#fff;padding:8%}
+.gal img.cover{object-fit:contain;background:#fff;padding:4%}
 .gal img{flex:0 0 100%;width:100%;height:100%;object-fit:cover;scroll-snap-align:start;display:block}
 .dots{position:absolute;left:0;right:0;bottom:12px;display:flex;justify-content:center;gap:6px;pointer-events:none}
 .dots i{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.45);transition:width .2s,background .2s}
@@ -259,6 +259,8 @@ body.locked{overflow:hidden}
 .slide .pic .badge small{display:block;font-weight:500;color:var(--muted);font-size:12px}
 .slide.dark{--sbg:var(--ink);--sfg:#fff;--smuted:#b4bcc8}
 .slide.dark .btn.sec{color:#fff;border-color:rgba(255,255,255,.3)}
+.slide.dark .btn.pri{background:#fff;color:var(--ink)}
+.slide.dark .btn.pri:hover{background:#e8ebf0}
 .bdots{position:absolute;left:0;right:0;bottom:14px;display:flex;justify-content:center;gap:8px}
 .bdots button{width:8px;height:8px;padding:0;border:0;border-radius:99px;background:rgba(0,0,0,.25);cursor:pointer;transition:width .25s,background .25s}
 .bdots button[aria-current="true"]{width:26px;background:var(--blue-text)}
@@ -272,6 +274,22 @@ body.locked{overflow:hidden}
   .slide p{font-size:16px;margin-bottom:16px}
   .slide .chipsline{margin-bottom:18px}
 }
+
+
+.slide.full{position:relative;overflow:hidden;--sbg:#05070b}
+.slide.full .bgimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.slide.full::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,7,11,.92) 0%,rgba(5,7,11,.7) 38%,rgba(5,7,11,.05) 72%)}
+.slide.full .wrap{position:relative;z-index:1;grid-template-columns:1fr;min-height:min(72vh,600px)}
+.slide.full .txt{max-width:540px}
+.slide.full .chipsline li{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.18);color:#fff}
+@media (max-width:820px){
+  .slide.full .wrap{min-height:560px;align-content:end;padding-block:24px 52px}
+  .slide.full::after{background:linear-gradient(180deg,rgba(5,7,11,.05) 0%,rgba(5,7,11,.55) 40%,rgba(5,7,11,.95) 72%)}
+  .slide.full .bgimg{height:62%;object-position:center}
+}
+.bdots button{background:rgba(255,255,255,.4)}
+.bdots button[aria-current="true"]{background:#fff}
+.tile img{object-fit:contain;background:#fff}
 
 .trust{border-bottom:1px solid var(--line)}
 .trust ul{list-style:none;margin:0;padding:18px 0;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
@@ -390,7 +408,8 @@ footer img{height:34px;width:auto;display:block}
 <section class="view" id="catalogo" role="tabpanel" aria-labelledby="tab-catalogo">
   <div class="banner" aria-roledescription="carrossel" aria-label="Destaques">
     <div class="slides" id="slides">
-      <article class="slide" style="--sbg:#eceff4">
+      <article class="slide dark full">
+        <img class="bgimg" src="img/banner-iphone.jpg" alt="iPhone 16 Pro em titânio natural">
         <div class="wrap">
           <div class="txt">
             <div class="eyebrow">Seminovo com caixa</div>
@@ -399,22 +418,24 @@ footer img{height:34px;width:auto;display:block}
             <p>Seu usado entra como entrada e o restante parcela em até 18x no cartão.</p>
             <div class="cta"><a class="btn big pri" href="https://wa.me/5591985327797?text=Ol%C3%A1%2C%20CR%20Imports%21%20Tenho%20interesse%20no%20iPhone%2016%20Pro%20Max%20256%20GB%20Natural%20Tit%C3%A2nio%20%28bateria%2091%25%29.%20Ainda%20est%C3%A1%20dispon%C3%ADvel%3F" target="_blank" rel="noopener">Tenho interesse</a><button class="btn big sec" data-cat-go="iphone">Ver todos os iPhones</button></div>
           </div>
-          <div class="pic"><img src="img/hero-16pm.webp" alt="iPhone 16 Pro Max Natural Titânio sobre a caixa" fetchpriority="high"><div class="badge">Bateria 91%<small>Saúde informada em todo anúncio</small></div></div>
+          
         </div>
       </article>
-      <article class="slide dark">
+      <article class="slide dark full">
+        <img class="bgimg" src="img/banner-xiaomi.jpg" alt="Celular Xiaomi preto sobre fundo escuro" loading="lazy">
         <div class="wrap">
           <div class="txt">
             <div class="eyebrow">Xiaomi lacrado</div>
-            <h2>Redmi Note 14 Pro 5G. <em>200 MP</em> de câmera.</h2>
-            <ul class="chipsline"><li>256 GB</li><li>8 GB RAM</li><li>Novo na caixa</li></ul>
-            <p>Xiaomi novos e lacrados, prontos para entrega.</p>
+            <h2>Xiaomi novos, <em>lacrados</em> na caixa.</h2>
+            <ul class="chipsline"><li>Redmi Note 15</li><li>Redmi Note 14 Pro 5G</li><li>Redmi 15</li></ul>
+            <p>Novos, na caixa lacrada e à pronta entrega.</p>
             <div class="cta"><a class="btn big blue" href="https://wa.me/5591985327797?text=Ol%C3%A1%2C%20CR%20Imports%21%20Tenho%20interesse%20no%20Redmi%20Note%2014%20Pro%205G%20256%20GB%20/%208%20GB%20RAM%20%28lacrado%29.%20Ainda%20est%C3%A1%20dispon%C3%ADvel%3F" target="_blank" rel="noopener">Tenho interesse</a><button class="btn big sec" data-cat-go="xiaomi">Ver Xiaomi</button></div>
           </div>
-          <div class="pic"><img src="img/hero-rn14p.webp" alt="Caixa lacrada do Redmi Note 14 Pro 5G" loading="lazy"></div>
+          
         </div>
       </article>
-      <article class="slide" style="--sbg:#e7eeff">
+      <article class="slide dark full">
+        <img class="bgimg" src="img/banner-troca.jpg" alt="Duas mãos segurando dois celulares" loading="lazy">
         <div class="wrap">
           <div class="txt">
             <div class="eyebrow">Troca Fácil</div>
@@ -423,10 +444,11 @@ footer img{height:34px;width:auto;display:block}
             <p>Responda algumas perguntas e veja quanto o seu aparelho pode valer na troca.</p>
             <div class="cta"><button class="btn big pri" data-go="troca">Simular minha troca</button></div>
           </div>
-          <div class="pic"><img src="img/hero-14p.webp" alt="iPhone 14 Pro Roxo na mão" loading="lazy"></div>
+          
         </div>
       </article>
-      <article class="slide" style="--sbg:#f1f2f4">
+      <article class="slide dark full">
+        <img class="bgimg" src="img/banner-relogio.jpg" alt="Smartwatch preto sobre fundo escuro" loading="lazy">
         <div class="wrap">
           <div class="txt">
             <div class="eyebrow">Smartwatches</div>
@@ -435,7 +457,7 @@ footer img{height:34px;width:auto;display:block}
             <p>MA27, S11, Watch Ultra e mais modelos à pronta entrega.</p>
             <div class="cta"><button class="btn big pri" data-cat-go="relogios">Ver smartwatches</button></div>
           </div>
-          <div class="pic"><img src="img/hero-ma27.webp" alt="Smartwatch Microwear MA27" loading="lazy"></div>
+          
         </div>
       </article>
     </div>
@@ -651,7 +673,7 @@ const ICONS = {
   box:`<svg class="ico-ph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M21 8l-9-5-9 5 9 5 9-5zM3 8v8l9 5 9-5V8M12 13v8"/></svg>`,
 };
 /* Capa oficial do produto (img/capa-{id}.webp), mostrada antes das fotos reais. Preencher quando chegarem as imagens oficiais. */
-const COVERS = {};
+const COVERS = {"12pm":"img/capa-12pm.jpg", "13":"img/capa-13.jpg", "14p":"img/capa-14p.jpg", "14pm":"img/capa-14pm.jpg", "16pm":"img/capa-16pm.jpg", "a-airdots":"img/capa-a-airdots.jpg", "a-airpods":"img/capa-a-airpods.jpg", "a-c20":"img/capa-a-c20.jpg", "a-c35":"img/capa-a-c35.jpg", "a-cabo1m":"img/capa-a-cabo1m.jpg", "a-fones":"img/capa-a-fones.jpg", "a-havit":"img/capa-a-havit.jpg", "a-hm30":"img/capa-a-hm30.jpg", "a-hm30kit":"img/capa-a-hm30kit.jpg", "a-ka790":"img/capa-a-ka790.jpg", "a-ma27":"img/capa-a-ma27.jpg", "a-mic":"img/capa-a-mic.jpg", "a-mouse":"img/capa-a-mouse.jpg", "a-p9":"img/capa-a-p9.jpg", "a-peining20":"img/capa-a-peining20.jpg", "a-s11":"img/capa-a-s11.jpg", "a-u5x":"img/capa-a-u5x.jpg", "a-wultra":"img/capa-a-wultra.jpg", "a-wultra2":"img/capa-a-wultra2.jpg", "a-wultra4":"img/capa-a-wultra4.jpg", "a-zonebuds":"img/capa-a-zonebuds.jpg", "c-classica":"img/capa-c-classica.jpg", "c-clearmag":"img/capa-c-clearmag.jpg", "c-silicone":"img/capa-c-silicone.jpg", "c-space":"img/capa-c-space.jpg", "c-strass":"img/capa-c-strass.jpg", "g-gamestick":"img/capa-g-gamestick.jpg", "ipad10":"img/capa-ipad10.jpg", "r15a":"img/capa-r15a.jpg", "r15b":"img/capa-r15b.jpg", "r17":"img/capa-r17.jpg", "rn14p":"img/capa-rn14p.jpg", "rn15":"img/capa-rn15.jpg"};
 function shot(p,tags){
   const ph = COVERS[p.id] ? [COVERS[p.id], ...(PHOTOS[p.id]||[])] : PHOTOS[p.id];
   if(!ph) return `<div class="shot">${p.art?phoneSVG(p.art):ICONS[p.icon||"box"]}${tags}</div>`;
@@ -708,7 +730,7 @@ function renderCatalog(){
 }
 document.getElementById("chips").addEventListener("click",e=>{const b=e.target.closest("[data-cat]"); if(b){cat=b.dataset.cat; renderCatalog();}});
 /* Menu de categorias, blocos "Compre por categoria" e botões dos banners */
-const TILE_IMG = {iphone:"img/14p-1.jpg", xiaomi:"img/rn14p-1.jpg", ipad:"img/ipad10-1.jpg", relogios:"img/a-ma27-1.jpg", fones:"img/a-p9-2.jpg", capinhas:"img/c-silicone-1.jpg", carregadores:"img/a-c35-1.jpg", gamer:"img/g-gamestick-1.jpg"};
+const TILE_IMG = {iphone:"img/capa-16pm.jpg", xiaomi:"img/capa-rn14p.jpg", ipad:"img/capa-ipad10.jpg", relogios:"img/capa-a-ma27.jpg", fones:"img/capa-a-p9.jpg", capinhas:"img/capa-c-silicone.jpg", carregadores:"img/capa-a-hm30kit.jpg", gamer:"img/capa-g-gamestick.jpg"};
 document.getElementById("dr-cats").innerHTML = CATS.map(c=>`<button class="dr-item" data-cat-go="${c.id}" data-close aria-current="false"><img src="${TILE_IMG[c.id]}" alt="" loading="lazy">${c.label}<span class="n">${c.items.length}</span></button>`).join("");
 const drawer=document.getElementById("drawer"), menuBtn=document.getElementById("menu-btn");
 function setMenu(open){
